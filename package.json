@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@terwanerik/scrolltrigger": "^1.0.5",
+    "express": "^4.21.2",
+    "material-ui-audio-player": "^1.6.6",
+    "nodemon": "^3.1.9",
+    "swiper": "^11.2.6"
+  },
+  "name": "shakuryon-website",
+  "version": "1.0.0",
+  "description": "Creating my first website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shakuryon Steward",
+  "license": "ISC"
+}
