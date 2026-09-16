@@ -1,0 +1,428 @@
+:root {
+    --theme-color: #205fff;
+    --dark-theme-color: #00113d;
+    --secondary-theme-color: #3db9ff;
+    --secondary-dark-color: #061963;
+    --tertiary-theme-color: #c9c9c9;
+    --tertiary-dark-color: #1c1c1c;
+
+    --hover-color: #fede01;
+    --hover-sec-color: #a89400;
+
+    --mono-color: whitesmoke;
+    --ohno-color: black;
+
+    --card-va-accent: #3db9ff;
+    --card-va-start: #0a2ea6;
+    --card-va-end: #00113d;
+    --card-va-glow: rgba(61, 185, 255, 0.35);
+
+    --card-web-accent: #5dfb86;
+    --card-web-start: #061963;
+    --card-web-end: #0a2ea6;
+    --card-web-glow: rgba(93, 251, 134, 0.3);
+
+    --card-lock-accent: #9a9a9a;
+    --card-lock-start: #2b2b2b;
+    --card-lock-end: #101010;
+    --card-lock-glow: rgba(254, 222, 1, 0.18);
+
+    --font-heading: "Rajdhani", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-tertiary: "Press Start 2P", system-ui;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background: radial-gradient(circle at 50% 20%, var(--dark-theme-color), var(--ohno-color) 75%);
+    color: var(--mono-color);
+    overflow-x: hidden;
+}
+
+
+/* ======================================= */
+/* ==== SELECT SCREEN ==== */
+/* ======================================= */
+
+#selectScreen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 4rem 2rem 3rem;
+    overflow: hidden;
+}
+
+
+/* ======================================= */
+/* ==== AMBIENT BACKDROP ==== */
+/* ======================================= */
+
+.select-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.backdrop-mark-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 64px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 64px);
+    mask-image: radial-gradient(circle at 50% 40%, black, transparent 75%);
+}
+
+.backdrop-glow {
+    position: absolute;
+    width: 46vw;
+    height: 46vw;
+    max-width: 620px;
+    max-height: 620px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.55;
+    transition: opacity 0.6s ease;
+}
+
+.glow-va {
+    left: 6%;
+    top: 18%;
+    background: var(--card-va-glow);
+}
+
+.glow-web {
+    right: 6%;
+    top: 18%;
+    background: var(--card-web-glow);
+}
+
+
+/* ======================================= */
+/* ==== BRAND MARK ==== */
+/* ======================================= */
+
+.select-brand {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1.5rem;
+}
+
+.select-logo {
+    height: 6rem;
+    filter: drop-shadow(0 3px 10px rgba(32, 95, 255, 0.6));
+}
+
+
+/* ======================================= */
+/* ==== HEADING ==== */
+/* ======================================= */
+
+.select-heading {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.select-eyebrow {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: var(--secondary-theme-color);
+    margin-bottom: 0.5rem;
+}
+
+.select-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 3px 3px 0 var(--ohno-color), 0 0 40px rgba(32, 95, 255, 0.5);
+}
+
+
+/* ======================================= */
+/* ==== ROSTER CONTAINER ==== */
+/* ======================================= */
+
+.roster-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+
+/* ======================================= */
+/* ==== ROSTER CARD (shared frame) ==== */
+/* ======================================= */
+
+.roster-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    text-decoration: none;
+    color: var(--mono-color);
+    border: 3px solid var(--portfolio-accent, var(--tertiary-theme-color));
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--card-start, #111), var(--card-end, #000));
+    box-shadow: 8px 8px 0 var(--ohno-color), 0 0 30px var(--card-glow, transparent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.roster-card:hover,
+.roster-card:focus-visible {
+    transform: translateY(-8px);
+    box-shadow: 10px 12px 0 var(--ohno-color), 0 0 46px var(--card-glow, transparent);
+}
+
+.va-card {
+    --portfolio-accent: var(--card-va-accent);
+    --card-start: var(--card-va-start);
+    --card-end: var(--card-va-end);
+    --card-glow: var(--card-va-glow);
+}
+
+.web-card {
+    --portfolio-accent: var(--card-web-accent);
+    --card-start: var(--card-web-start);
+    --card-end: var(--card-web-end);
+    --card-glow: var(--card-web-glow);
+}
+
+.locked-card {
+    --portfolio-accent: var(--card-lock-accent);
+    --card-start: var(--card-lock-start);
+    --card-end: var(--card-lock-end);
+    --card-glow: var(--card-lock-glow);
+    cursor: not-allowed;
+}
+
+.locked-card:hover,
+.locked-card:focus-visible {
+    transform: translateY(-3px);
+}
+
+
+/* ==== CARD PLATE LABEL (P1 / P2 / P3) ==== */
+
+.roster-card-plate-label {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    z-index: 4;
+    padding: 0.3rem 0.55rem;
+    font-family: var(--font-tertiary);
+    font-size: 0.6rem;
+    color: var(--portfolio-accent);
+    border: 2px solid var(--portfolio-accent);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+/* ======================================= */
+/* ==== ROSTER PORTRAIT ==== */
+/* ======================================= */
+
+.roster-portrait {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 40%);
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0);
+    transition: transform 0.4s ease;
+}
+
+.roster-card:hover .portrait-img {
+    transform: scale(1.05);
+}
+
+.locked-card .portrait-img {
+    filter: grayscale(1) brightness(0.55);
+}
+
+
+/* ==== ICON SWARM ==== */
+
+.icon-swarm {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.swarm-icon {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    color: var(--portfolio-accent);
+    opacity: 0;
+    filter: drop-shadow(0 0 6px var(--portfolio-accent));
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.roster-card:hover .swarm-icon {
+    opacity: 0.9;
+}
+
+/* VO swarm positions */
+.icon-mic       { top: 10%;  left: 10%;  transform: translateY(6px); }
+.icon-note-a    { top: 18%;  right: 12%; transform: translateY(6px); }
+.icon-note-b    { bottom: 22%; left: 14%; transform: translateY(6px); }
+.icon-wave      { bottom: 10%; right: 10%; width: 60px; height: 20px; transform: translateY(6px); }
+
+.roster-card:hover .icon-mic    { transform: translateY(-6px); }
+.roster-card:hover .icon-note-a { transform: translateY(-10px); }
+.roster-card:hover .icon-note-b { transform: translateY(-8px); }
+.roster-card:hover .icon-wave   { transform: translateY(-4px); }
+
+/* Web swarm positions */
+.icon-brackets  { top: 10%; left: 10%; transform: translateY(6px); }
+.icon-block-a   { top: 16%; right: 10%; width: 34px; height: 34px; transform: translateY(6px); }
+.icon-cursor    { bottom: 20%; left: 16%; transform: translateY(6px); }
+.icon-ring      { bottom: 8%; right: 12%; width: 40px; height: 40px; transform: translateY(6px) rotate(0deg); }
+
+.roster-card:hover .icon-brackets { transform: translateY(-6px); }
+.roster-card:hover .icon-block-a  { transform: translateY(-8px); }
+.roster-card:hover .icon-cursor   { transform: translateY(-10px); }
+.roster-card:hover .icon-ring     { transform: translateY(-4px) rotate(90deg); }
+
+/* Locked dust positions */
+.icon-dust-a { top: 22%; left: 20%; width: 6px; height: 6px; opacity: 0.5; }
+.icon-dust-b { top: 55%; right: 18%; width: 5px; height: 5px; opacity: 0.4; }
+.icon-dust-c { bottom: 18%; left: 45%; width: 7px; height: 7px; opacity: 0.45; }
+
+.locked-card .swarm-icon { opacity: 0.4; animation: dustDrift 4s ease-in-out infinite; }
+.locked-card:hover .swarm-icon,
+.locked-card:focus-visible .swarm-icon { opacity: 0.7; }
+
+@keyframes dustDrift {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+
+/* ==== LOCK OVERLAY ==== */
+
+.lock-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.lock-icon {
+    width: 46px;
+    height: 46px;
+    color: var(--hover-color);
+    filter: drop-shadow(0 0 10px rgba(254, 222, 1, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.locked-card:hover .lock-icon,
+.locked-card:focus-visible .lock-icon {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 16px rgba(254, 222, 1, 0.8));
+}
+
+
+/* ======================================= */
+/* ==== ROSTER PLATE (name / tag / select) ==== */
+/* ======================================= */
+
+.roster-plate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    padding: 1.1rem 1rem 1.4rem;
+    border-top: 2px solid var(--portfolio-accent);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.plate-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 0 var(--ohno-color);
+}
+
+.plate-tag {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.plate-select {
+    margin-top: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    font-family: var(--font-tertiary);
+    font-size: 0.6rem;
+    color: var(--ohno-color);
+    background: var(--portfolio-accent);
+    border-radius: 3px;
+}
+
+.plate-locked {
+    color: var(--hover-color);
+    background: rgba(254, 222, 1, 0.12);
+    border: 1px solid var(--hover-color);
+}
+
+
+/* ======================================= */
+/* ==== FOOTNOTE ==== */
+/* ======================================= */
+
+.select-footnote {
+    position: relative;
+    z-index: 2;
+    margin-top: 3rem;
+    font-family: var(--font-tertiary);
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ======================================= */
+/* ==== RESPONSIVE ==== */
+/* ======================================= */
+
+@media (max-width: 720px) {
+    .select-title { font-size: 2.6rem; }
+    .roster-container { gap: 1.5rem; }
+    .roster-card { width: 90vw; max-width: 340px; }
+}
