@@ -1,0 +1,52 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="frame">
+      <rect x="0" y="0" width="1920" height="1080"/>
+    </clipPath>
+
+    <pattern id="diagStripes" patternUnits="userSpaceOnUse" width="40" height="40" patternTransform="rotate(45)">
+      <rect width="40" height="40" fill="#F5B301"/>
+      <rect width="14" height="40" fill="#FFC61A"/>
+    </pattern>
+
+    <pattern id="dots" patternUnits="userSpaceOnUse" width="26" height="26">
+      <circle cx="6" cy="6" r="3.2" fill="#E89B00" opacity="0.55"/>
+    </pattern>
+
+    <pattern id="dotsFade" patternUnits="userSpaceOnUse" width="30" height="30">
+      <circle cx="6" cy="6" r="3" fill="#FFFFFF" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- base -->
+    <rect width="1920" height="1080" fill="#F7B500"/>
+
+    <!-- diagonal stripe block, top-right -->
+    <rect x="1150" y="0" width="770" height="480" fill="url(#diagStripes)"/>
+
+    <!-- big circle -->
+    <circle cx="1720" cy="140" r="230" fill="#F3A500" opacity="0.9"/>
+
+    <!-- dotted halftone triangle-ish block, bottom-right -->
+    <rect x="1300" y="520" width="620" height="560" fill="url(#dots)"/>
+
+    <!-- big blue circle bottom right accent -->
+    <circle cx="1830" cy="1020" r="260" fill="#2E6FE0"/>
+
+    <!-- soft dot texture across it -->
+    <circle cx="1830" cy="1020" r="260" fill="url(#dotsFade)"/>
+
+    <!-- outline triangle, left of center -->
+    <polygon points="960,140 1120,260 960,380" fill="none" stroke="#F3A500" stroke-width="6" opacity="0.85"/>
+
+    <!-- outline diamond -->
+    <polygon points="1080,640 1220,760 1080,900 940,760" fill="none" stroke="#F3A500" stroke-width="6" opacity="0.85"/>
+
+    <!-- zigzag accent bottom right -->
+    <polyline points="1720,1040 1750,1010 1780,1040 1810,1010 1840,1040" fill="none" stroke="#FFC61A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- subtle diagonal cut divider -->
+    <polygon points="900,0 980,0 700,1080 620,1080" fill="#111111" opacity="0.08"/>
+  </g>
+</svg>
