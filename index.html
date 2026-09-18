@@ -1,155 +1,521 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Your Shak | Shakuryon</title>
-    <meta name="description" content="Pick your Shak — voiceover artist, web designer, or coming soon: charcoal artist.">
+
+    <title>Shakuryon | Select Your Shak</title>
+
+    <meta name="description" content="Choose your Shakuryon — Voice Actor, Website Designer, or discover a locked talent.">
 
     <!-- Heading Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap">
+
     <!-- Body Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <!-- Tertiary Font (retro plate labels) -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!-- Tertiary Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+
+    <!-- SoulCalibur Inspired Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
     <!-- Miscellaneous -->
     <link rel="icon" href="assets/s_logo.png">
+
 </head>
+
 
 <body>
 
-    <main id="selectScreen">
+    <!-- ======================================= -->
+    <!-- ==== AMBIENT BACKGROUND ==== -->
+    <!-- ======================================= -->
 
-        <!-- ==== Ambient Backdrop ==== -->
+    <div id="backgroundSection" aria-hidden="true">
 
-        <div class="select-backdrop" aria-hidden="true">
-            <div class="backdrop-glow glow-va"></div>
-            <div class="backdrop-glow glow-web"></div>
-            <div class="backdrop-mark-grid"></div>
+        <div class="star-field">
+            <span class="star star-one">✦</span>
+            <span class="star star-two">✧</span>
+            <span class="star star-three">✦</span>
+            <span class="star star-four">·</span>
+            <span class="star star-five">✧</span>
+            <span class="star star-six">✦</span>
+            <span class="star star-seven">·</span>
+            <span class="star star-eight">✧</span>
         </div>
 
 
-        <!-- ==== Brand Mark ==== -->
+        <!-- ==== Floating Ambient Artifacts ==== -->
 
-        <div class="select-brand">
-            <!-- Swap for the real Soul-Calibur-styled "Shakuryon" wordmark -->
-            <img src="assets/Shak-Logo.png" alt="Shakuryon, styled in the Soul Calibur 2 wordmark font" class="select-logo">
+        <div class="ambient-artifacts">
+
+            <span class="ambient-mic mic-one">♬</span>
+            <span class="ambient-mic mic-two">♪</span>
+            <span class="ambient-mic mic-three">♫</span>
+
+            <span class="ambient-code code-one">&lt;/&gt;</span>
+            <span class="ambient-code code-two">{ }</span>
+            <span class="ambient-code code-three">&lt;div&gt;</span>
+
+            <span class="glass-particle glass-one"></span>
+            <span class="glass-particle glass-two"></span>
+            <span class="glass-particle glass-three"></span>
+            <span class="glass-particle glass-four"></span>
+
         </div>
 
-
-        <!-- ==== Heading ==== -->
-
-        <div class="select-heading">
-            <span class="select-eyebrow">Voiceover. Web Design. One Guy.</span>
-            <h1 class="select-title">Select Your Shak</h1>
-        </div>
+    </div>
 
 
-        <!-- ==== Roster ==== -->
 
-        <div class="roster-container">
+    <!-- ======================================= -->
+    <!-- ==== SELECT YOUR SHAK SECTION ==== -->
+    <!-- ======================================= -->
 
-            <!-- ============================== -->
-            <!-- VOICEOVER SHAK -->
-            <!-- ============================== -->
+    <main id="selectSection">
 
-            <a href="https://pandalfva.netlify.app/" class="roster-card va-card" aria-label="Select Voiceover Shak — go to the voiceover site">
-
-                <div class="roster-card-plate-label">P1</div>
-
-                <div class="roster-portrait">
-                    <!-- Swap for the Royal Blue dress shirt + white tie portrait -->
-                    <img src="assets/va-portrait.png" alt="Shakuryon in Royal Blue dress shirt, voiceover portrait" class="portrait-img">
-
-                    <div class="icon-swarm" aria-hidden="true">
-                        <svg class="swarm-icon icon-mic" viewBox="0 0 24 24"><path fill="currentColor" d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21H9v2h6v-2h-2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
-                        <svg class="swarm-icon icon-note-a" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9Z"/></svg>
-                        <svg class="swarm-icon icon-note-b" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3v10.55A4 4 0 1 0 11 17V7h6V3H9Z"/></svg>
-                        <svg class="swarm-icon icon-wave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 12h2m3-5v10m3-8v6m3-9v12m3-8v4m3-6v8m3-4h2"/></svg>
-                    </div>
-                </div>
-
-                <div class="roster-plate">
-                    <span class="plate-name">Voiceover Shak</span>
-                    <span class="plate-tag">Narration · Commercial · Character Work</span>
-                    <span class="plate-select">Select</span>
-                </div>
-
-            </a>
+        <div class="select-container">
 
 
-            <!-- ============================== -->
-            <!-- WEB DESIGN SHAK -->
-            <!-- ============================== -->
+            <!-- ======================================= -->
+            <!-- ==== BRAND ==== -->
+            <!-- ======================================= -->
 
-            <a href="/" class="roster-card web-card" aria-label="Select Web Design Shak — go to the web design site">
+            <div class="brand-container">
 
-                <div class="roster-card-plate-label">P2</div>
-
-                <div class="roster-portrait">
-                    <!-- Swap for the Royal Blue dress shirt + white tie portrait -->
-                    <img src="assets/web-portrait.png" alt="Shakuryon in Royal Blue dress shirt, web design portrait" class="portrait-img">
-
-                    <div class="icon-swarm" aria-hidden="true">
-                        <svg class="swarm-icon icon-brackets" viewBox="0 0 24 24"><path fill="currentColor" d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4Zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4Z"/></svg>
-                        <svg class="swarm-icon icon-block-a" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="1" fill="currentColor" opacity="0.6"/><rect x="3" y="13" width="8" height="8" rx="1" fill="currentColor" opacity="0.6"/></svg>
-                        <svg class="swarm-icon icon-cursor" viewBox="0 0 24 24"><rect x="4" y="4" width="2" height="14" fill="currentColor"/></svg>
-                        <svg class="swarm-icon icon-ring" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-                    </div>
-                </div>
-
-                <div class="roster-plate">
-                    <span class="plate-name">Web Design Shak</span>
-                    <span class="plate-tag">Hand-Coded · SEO-Optimized · Small Business Sites</span>
-                    <span class="plate-select">Select</span>
-                </div>
-
-            </a>
-
-
-            <!-- ============================== -->
-            <!-- CHARCOAL ARTIST SHAK — LOCKED -->
-            <!-- ============================== -->
-
-            <div class="roster-card locked-card" role="button" aria-disabled="true" aria-label="Charcoal Artist Shak — locked, coming soon" tabindex="0">
-
-                <div class="roster-card-plate-label">P3</div>
-
-                <div class="roster-portrait">
-                    <!-- Swap for a desaturated / half-sketched portrait -->
-                    <img src="assets/locked-portrait.png" alt="Silhouette of a locked portrait" class="portrait-img">
-
-                    <div class="icon-swarm" aria-hidden="true">
-                        <svg class="swarm-icon icon-dust-a" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-                        <svg class="swarm-icon icon-dust-b" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-                        <svg class="swarm-icon icon-dust-c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
-                    </div>
-
-                    <div class="lock-overlay">
-                        <svg class="lock-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 0 1 6 0v3H9Z"/></svg>
-                    </div>
-                </div>
-
-                <div class="roster-plate">
-                    <span class="plate-name">Charcoal Artist Shak</span>
-                    <span class="plate-tag">Portraiture · Coming Soon</span>
-                    <span class="plate-select plate-locked">Keep Drawing to Unlock</span>
-                </div>
+                <img
+                    src="./ShakuryonVoiceActing/assets/Shak-Logo.png"
+                    alt="Shakuryon"
+                    class="shak-logo"
+                >
 
             </div>
 
-        </div>
 
 
-        <div class="select-footnote">
-            <span>↹ &nbsp;Point. Click. Select.</span>
+            <!-- ======================================= -->
+            <!-- ==== TITLE ==== -->
+            <!-- ======================================= -->
+
+            <div class="select-heading">
+
+                <span class="select-topper">
+                    Shakuryon
+                </span>
+
+                <h1 class="select-title">
+                    SELECT YOUR SHAK
+                </h1>
+
+                <p class="select-subtitle">
+                    Choose your destination.
+                </p>
+
+            </div>
+
+
+
+            <!-- ======================================= -->
+            <!-- ==== CHARACTER SELECT ==== -->
+            <!-- ======================================= -->
+
+            <div class="shak-card-group">
+
+
+                <!-- ======================================= -->
+                <!-- ==== VOICE ACTOR SHAK ==== -->
+                <!-- ======================================= -->
+
+                <a
+                    href="./ShakuryonVoiceActing/"
+                    class="shak-card voice-card"
+                    aria-label="Select Voice Actor Shak"
+                >
+
+                    <div class="shak-card-inner">
+
+
+                        <!-- ==== Card Label ==== -->
+
+                        <div class="shak-card-label">
+
+                            <span>
+                                PLAYER 01
+                            </span>
+
+                            <span class="card-status">
+                                READY
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ==== Character Visual ==== -->
+
+                        <div class="shak-card-visual">
+
+                            <div class="character-aura"></div>
+
+                            <!-- ==== Voice Artifacts ==== -->
+
+                            <div class="card-artifacts voice-artifacts">
+
+                                <span class="voice-icon voice-mic">🎙</span>
+
+                                <span class="voice-icon voice-note note-one">♪</span>
+
+                                <span class="voice-icon voice-note note-two">♫</span>
+
+                                <span class="voice-icon voice-note note-three">♬</span>
+
+                                <span class="voice-wave wave-one"></span>
+                                <span class="voice-wave wave-two"></span>
+                                <span class="voice-wave wave-three"></span>
+
+                            </div>
+
+
+                            <img
+                                src="./firstscreenAssets/blueShak.png"
+                                alt="Shakuryon Steward dressed in his signature royal blue shirt and white tie"
+                                class="shak-character blueShak"
+                            >
+
+
+                            <!-- ==== Character Frame ==== -->
+
+                            <div class="character-frame">
+
+                                <div class="frame-corner frame-corner-one"></div>
+                                <div class="frame-corner frame-corner-two"></div>
+                                <div class="frame-corner frame-corner-three"></div>
+                                <div class="frame-corner frame-corner-four"></div>
+
+                                <span class="frame-line frame-line-one"></span>
+                                <span class="frame-line frame-line-two"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==== Card Information ==== -->
+
+                        <div class="shak-card-content">
+
+                            <span class="shak-card-category">
+                                VOICEOVER
+                            </span>
+
+                            <h2 class="shak-card-title">
+                                Voice Actor Shak
+                            </h2>
+
+                            <p class="shak-card-description">
+                                Narration, characters, commercials,
+                                dubbing, e-learning and more.
+                            </p>
+
+                            <span class="select-button">
+                                SELECT
+                                <span class="select-arrow">→</span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- ======================================= -->
+                <!-- ==== WEBSITE DESIGN SHAK ==== -->
+                <!-- ======================================= -->
+
+                <a
+                    href="./ShakurWebsites/public/"
+                    class="shak-card web-card"
+                    aria-label="Select Website Design Shak"
+                >
+
+                    <div class="shak-card-inner">
+
+
+                        <!-- ==== Card Label ==== -->
+
+                        <div class="shak-card-label">
+
+                            <span>
+                                PLAYER 02
+                            </span>
+
+                            <span class="card-status">
+                                READY
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ==== Character Visual ==== -->
+
+                        <div class="shak-card-visual">
+
+                            <div class="character-aura"></div>
+
+                            <!-- ==== Web Artifacts ==== -->
+
+                            <div class="card-artifacts web-artifacts">
+
+                                <span class="web-icon html-icon">
+                                    &lt;/&gt;
+                                </span>
+
+                                <span class="web-icon css-icon">
+                                    CSS
+                                </span>
+
+                                <span class="web-icon js-icon">
+                                    JS
+                                </span>
+
+                                <span class="web-icon code-icon">
+                                    { }
+                                </span>
+
+                                <span class="web-cursor">
+                                    ↖
+                                </span>
+
+                                <div class="browser-window">
+
+                                    <div class="browser-top">
+
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+
+                                    </div>
+
+                                    <div class="browser-code">
+                                        &lt;design&gt;
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <img
+                                src="./firstscreenAssets/greenShak.png"
+                                alt="Shakuryon Steward dressed in his signature royal blue shirt and white tie"
+                                class="shak-character greenShak"
+                            >
+
+
+                            <!-- ==== Character Frame ==== -->
+
+                            <div class="character-frame">
+
+                                <div class="frame-corner frame-corner-one"></div>
+                                <div class="frame-corner frame-corner-two"></div>
+                                <div class="frame-corner frame-corner-three"></div>
+                                <div class="frame-corner frame-corner-four"></div>
+
+                                <span class="frame-line frame-line-one"></span>
+                                <span class="frame-line frame-line-two"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==== Card Information ==== -->
+
+                        <div class="shak-card-content">
+
+                            <span class="shak-card-category">
+                                WEB DEVELOPMENT
+                            </span>
+
+                            <h2 class="shak-card-title">
+                                Website Design Shak
+                            </h2>
+
+                            <p class="shak-card-description">
+                                Hand-coded websites built with HTML,
+                                CSS, JavaScript and personality.
+                            </p>
+
+                            <span class="select-button">
+                                SELECT
+                                <span class="select-arrow">→</span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- ======================================= -->
+                <!-- ==== CHARCOAL ARTIST SHAK ==== -->
+                <!-- ======================================= -->
+
+                <div
+                    class="shak-card charcoal-card locked-card"
+                    aria-label="Charcoal Artist Shak - Locked"
+                >
+
+                    <div class="shak-card-inner">
+
+
+                        <!-- ==== Card Label ==== -->
+
+                        <div class="shak-card-label">
+
+                            <span>
+                                PLAYER 03
+                            </span>
+
+                            <span class="card-status locked-status">
+                                LOCKED
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ==== Character Visual ==== -->
+
+                        <div class="shak-card-visual">
+
+                            <div class="character-aura"></div>
+
+
+                            <!-- ==== Charcoal Artifacts ==== -->
+
+                            <div class="card-artifacts charcoal-artifacts">
+
+                                <span class="charcoal-stroke stroke-one"></span>
+                                <span class="charcoal-stroke stroke-two"></span>
+                                <span class="charcoal-stroke stroke-three"></span>
+
+                                <span class="charcoal-pencil">
+                                    ✎
+                                </span>
+
+                                <span class="charcoal-dust dust-one"></span>
+                                <span class="charcoal-dust dust-two"></span>
+                                <span class="charcoal-dust dust-three"></span>
+
+                            </div>
+
+
+                            <img
+                                src="./firstscreenAssets/lockedShak.jpg"
+                                alt="Shakuryon Steward charcoal artist character"
+                                class="shak-character lockedShak"
+                            >
+
+
+                            <!-- ==== Lock Overlay ==== -->
+
+                            <div class="lock-overlay">
+
+                                <div class="lock-icon">
+                                    🔒
+                                </div>
+
+                                <span>
+                                    LOCKED
+                                </span>
+
+                            </div>
+
+
+                            <!-- ==== Character Frame ==== -->
+
+                            <div class="character-frame">
+
+                                <div class="frame-corner frame-corner-one"></div>
+                                <div class="frame-corner frame-corner-two"></div>
+                                <div class="frame-corner frame-corner-three"></div>
+                                <div class="frame-corner frame-corner-four"></div>
+
+                                <span class="frame-line frame-line-one"></span>
+                                <span class="frame-line frame-line-two"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ==== Card Information ==== -->
+
+                        <div class="shak-card-content">
+
+                            <span class="shak-card-category">
+                                FINE ART
+                            </span>
+
+                            <h2 class="shak-card-title">
+                                Charcoal Artist Shak
+                            </h2>
+
+                            <p class="shak-card-description">
+                                A hidden talent waiting somewhere
+                                beyond the character select screen.
+                            </p>
+
+                            <span class="select-button locked-button">
+                                LOCKED
+                                <span class="select-arrow">🔒</span>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ======================================= -->
+            <!-- ==== SELECT FOOTER ==== -->
+            <!-- ======================================= -->
+
+            <div class="select-instructions">
+                <span>
+                    © 2026 ShakurWebsites | Shakuryon Steward
+                </span>
+            </div>
+
+
         </div>
 
     </main>
 
+
+
 </body>
+
 </html>
