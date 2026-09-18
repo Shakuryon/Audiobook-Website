@@ -2,6 +2,7 @@
 /* ==== ROOT COLORS ==== */
 /* ======================================= */
 
+
 :root {
 
     --theme-color: #0A2EA6;
@@ -2380,3 +2381,4 @@ body:has(.charcoal-card:hover) {
     }
 
 }
+

@@ -1,36 +1,423 @@
 /* ===========================
-   RESPONSIVE BREAKPOINTS...test
+   RESPONSIVE BREAKPOINTS
+   Homepage: nav, hero, reels, reviews, contact
 =========================== */
 
+/* ==== Average Desktop Screens ==== */
+@media screen and (max-width: 1450px) {
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .intro-container {
+        width: 55%;
+    }
+
+    .pfp {
+        height: 34rem;
+    }
+
+    .reel-texts h2 {
+        font-size: 3.5rem;
+    }
+}
+
 /* ===== Desktop ===== */
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+
+    .nav-bar-container {
+        padding: 0px 20px;
+        gap: 1rem;
+    }
+
+    .links {
+        gap: 18px;
+    }
+
+    .intro-container {
+        width: 60%;
+        margin: 30px 20px 20px 30px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .pfp {
+        height: 30rem;
+    }
+
+    .reel-containers {
+        gap: 1.5rem;
+    }
+
+    .review-card {
+        flex: 0 0 calc(100% / 2 - 1rem); /* 2 cards visible instead of 3 */
+    }
+}
 
 /* ===== Tablet ===== */
 @media screen and (max-width: 992px) {
 
+    /* Nav bar: keep it one row, just tighten everything down */
+    .nav-bar-container {
+        padding: 0px 15px;
+        gap: 0.5rem;
+    }
+
+    .shak-logo {
+        height: 3.5rem;
+    }
+
+    .socials-container a {
+        padding: 1rem;
+    }
+
+    .links {
+        gap: 14px;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+
+    /* Hero: stack image under text instead of side-by-side */
+    #title-card-section {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .intro-brands img {
+      height: 60px; 
+    }
+
+    .intro-container {
+        width: 100%;
+        margin: 0 0 20px 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .intro-brands {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pfp {
+        height: 26rem;
+        width: 100%;
+    }
+
+    /* Reels: stack text above samples, both full width */
+    .reel-containers {
+        flex-direction: column;
+    }
+
+    .reel-sections {
+      margin-top: 2.5rem; 
+    }
+
+    .reel-texts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .reel-texts h2 {
+        font-size: 3rem;
+    }
+
+    .reel-texts p {
+        font-size: 18px;
+    }
+
+    .youtube-samples iframe {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .review-card {
+        flex: 0 0 calc(100% / 2 - 1rem);
+    }
+
+    /* Contact: stack banner over form */
+    .contact-container {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .contact-banner {
+        padding: 25px 0 20px 0;
+    }
+
+    .banner-pfp {
+        height: 50vh;
+        margin-left: 0;
+    }
+
+    .contact-info {
+        padding-right: 0;
+    }
 }
 
 /* ===== Tablet / Large Phone ===== */
 @media screen and (max-width: 768px) {
 
+    /* Nav bar: two rows now — logo+socials on top, links below */
+    .nav-bar-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .logo-container,
+    .links-container {
+        flex: 0 0 auto;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .socials-container {
+        order: 2;
+    }
+
+    .links-container {
+        order: 3;
+        width: 100%;
+    }
+
+    .links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .intro-brands img{
+      height: 60px;
+    }
+
+    .intro-subtext {
+        font-size: 0.95rem;
+    }
+
+    .pfp {
+        height: 20rem;
+    }
+
+    .reel-texts h2 {
+        font-size: 2.4rem;
+    }
+
+    .audio-player {
+        margin: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    video {
+        height: auto !important;
+    }
+
+    /* Reviews: one card visible at a time */
+    .review-card {
+        flex: 0 0 100%;
+    }
+
+    #review-section h1 {
+        font-size: 2rem;
+    }
+
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-inputs {
+        width: 100%;
+        max-width: 350px;
+    }
 }
 
 /* ===== Phone ===== */
 @media screen and (max-width: 576px) {
 
+    .socials-container a {
+        padding: 0.6rem;
+    }
+
+    .socials-container svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .links {
+        gap: 8px;
+    }
+
+    .links a {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-brands img {
+        height: 30px;
+        width: auto;
+    }
+
+    .audio-title {
+      text-align: center;
+    }
+
+    .pfp {
+        height: 16rem;
+    }
+
+    .reel-sections {
+        margin-top: 100px;
+        padding: 60px 0;
+    }
+
+    .reel-texts h2 {
+        font-size: 2rem;
+    }
+
+    .reel-texts p {
+        font-size: 16px;
+    }
+
+    .youtube-samples iframe {
+        margin: 10px 0 !important;
+        max-width: 100%;
+    }
+
+    .baby-footer {
+        right: 1rem;
+        bottom: -60px;
+        font-size: 0.85rem;
+    }
+
+    .contact-right-title {
+      text-align: center;
+    }
+
+    .contact-right button {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
 }
 
 /* ===== Small Phone ===== */
 @media screen and (max-width: 480px) {
 
+    .nav-bar-container {
+        padding: 8px;
+        gap: 0.4rem;
+    }
+
+    .shak-logo {
+        height: 2.75rem;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    .intro-subtext {
+        font-size: 0.85rem;
+    }
+
+    .pfp {
+        height: 14rem;
+    }
+
+    .reel-texts h2 {
+        font-size: 1.7rem;
+    }
+
+    .audio-title {
+        font-size: 0.85rem;
+    }
+
+    .banner-pfp {
+        height: 35vh;
+    }
+
+    .banner-logo {
+        width: 80%;
+    }
+
+    #review-section h1 {
+        font-size: 1.6rem;
+    }
 }
 
 /* ===== Tiny Phone ===== */
 @media screen and (max-width: 375px) {
 
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+
+    .socials-container svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .pfp {
+        height: 12rem;
+    }
+
+    .reel-texts h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-inputs {
+        height: 45px;
+    }
 }
 
 /* ===== Landscape ===== */
 @media screen and (max-height: 600px) and (orientation: landscape) {
 
+    #title-card-section {
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .intro-container {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .pfp {
+        height: 12rem;
+    }
+
+    .banner-pfp {
+        height: 40vh;
+    }
+
+    .bg-video-border {
+        height: 100%;
+    }
 }
