@@ -1081,7 +1081,7 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
 .performance-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex: 1;
   max-width: 600px;
@@ -1224,7 +1224,12 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
 }
 .free-card:hover,
 .maintenance-card:hover {
-  border-color: var(--hover-color);
+    transform: scale(1.05);
+    filter: brightness(1.15);
+    border-color: var(--mono-color);
+    box-shadow: 0 0 20px var(--hover-color),
+    0 0 35px rgba(255, 0, 0, 0.35),
+    0 5px 15px rgba(0, 0, 0, 0.5);
 }
 #pricingSection {
   padding-top: 8rem;
@@ -1352,13 +1357,7 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
     0 0 20px rgba(255, 0, 0, 0.2),
     inset 0 0 35px rgba(0, 0, 0, 0.25);
 }
-.maintenance-card:hover {
-  box-shadow:
-    10px 18px 0 rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(255, 220, 50, 0.4),
-    0 0 50px rgba(255, 0, 0, 0.25),
-    inset 0 0 30px rgba(0, 0, 0, 0.2);
-}
+
 .popular-ribbon {
   top: 25px;
   right: -45px;
@@ -1588,8 +1587,11 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
 .maintenance-button {
   color: #000;
   border-color: var(--hover-color);
-  background: linear-gradient(180deg, var(--hover-color), #b89c00);
+background: linear-gradient(180deg, var(--hover-color), #b89c00);
   text-shadow: none;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+      0 5px 12px rgba(0, 0, 0, 0.45);
 }
 .free-button:hover {
   transform: scale(1.04);
@@ -3312,6 +3314,173 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
 .portfolio-bottom strong {
   color: var(--mono-color);
 }
+
+/* ==== Industries Dropdown Enhancements (Sonic Theme) ==== */
+.nav-links .dropdown {
+  position: relative;
+  float: none;
+  overflow: visible;
+}
+
+.nav-links .dropdown-content {
+  display: none;
+  /* override any previous */
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  padding: 0.75rem 0;
+  margin-top: 0;
+  /* close the gap - no deadzone */
+  background: linear-gradient(180deg,
+      #93ddff 0%,
+      #29b6f6 40%,
+      var(--accent-color) 100%);
+  border: 3px solid var(--theme-color);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.45);
+  z-index: 200;
+  list-style: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+}
+
+.nav-dropdown-arrow {
+    display: inline-block;
+    font-size: 1.15em;
+    transition: transform .25s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-arrow,
+.nav-dropdown:focus-within .nav-dropdown-arrow,
+.nav-dropdown.is-open .nav-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.industry-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 150;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(190px, 1fr));
+    gap: .25rem;
+
+    min-width: 440px;
+    max-height: min(72vh, 560px);
+    overflow-y: auto;
+
+    padding: 1rem;
+    margin: 0;
+    list-style: none;
+
+    background: linear-gradient(145deg, var(--dark-theme-color), #00113d);
+    border: 3px solid var(--accent-color);
+    border-top: 4px solid var(--hover-color);
+    border-radius: 12px;
+
+    box-shadow:
+        7px 7px 0 rgba(0,0,0,.55),
+        0 0 24px rgba(61,185,255,.25);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0);
+
+    transition: opacity .2s ease, visibility .2s;
+}
+
+/* invisible bridge to kill deadzone */
+.nav-links .dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+.nav-links .dropdown:hover .dropdown-content,
+.nav-links .dropdown:focus-within .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.nav-links .dropdown-content li {
+  float: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links .dropdown-content li a {
+  display: block;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  color: var(--mono-color);
+  text-shadow: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  letter-spacing: 0.03rem;
+  transition: background 0.3s, color 0.3s, padding-left 0.3s;
+}
+
+.nav-links .dropdown-content li a:hover {
+  background: rgba(254, 222, 1, 0.85);
+  color: var(--ohno-color);
+  padding-left: 1.7rem;
+  box-shadow: none;
+  border: none;
+}
+
+/* Keep the parent button looking hovered while dropdown is open */
+.nav-links .dropdown:hover>a.dropbtn {
+  background: linear-gradient(180deg,
+      #ffe4aa 0,
+      var(--hover-color) 40%,
+      #fff780 100%);
+  border-color: var(--mono-color);
+  color: var(--mono-color);
+}
+
+/* Mobile friendliness - stack if needed */
+@media screen and (max-width: 992px) {
+  .nav-links .dropdown-content {
+    position: static;
+    transform: none;
+    min-width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .nav-links .dropdown:hover .dropdown-content {
+    transform: none;
+  }
+}
+
 .sonic-card {
   --portfolio-accent: #3db9ff;
   --portfolio-bg-start: #0a2ea6;
@@ -3336,3 +3505,89 @@ body:has(.Rbanner-set .banner:hover) .nav-links a::after {
   --portfolio-visual-end: #514600;
   --portfolio-glow: rgba(254, 222, 1, 0.4);
 }
+
+/* ==== Updated Sonic & Knuckles Pricing Cards ==== */
+.pricing-billing-toggle{display:flex;justify-content:center;gap:.5rem;width:fit-content;max-width:100%;margin:0 auto .8rem;padding:.45rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(0,0,0,.45)}
+.billing-toggle-button{padding:.8rem 1.4rem;border:0;border-radius:999px;color:#fff;background:transparent;font:700 .9rem var(--font-heading);letter-spacing:.06rem;cursor:pointer;transition:background .25s ease,box-shadow .25s ease,transform .25s ease}
+.billing-toggle-button.is-active{color:#fff;background:var(--theme-color);box-shadow:0 0 16px rgba(61,185,255,.45)}
+.billing-toggle-button:hover {
+    box-shadow: inset 0 0 0 2px rgba(61, 185, 255, 0.45),
+                inset 0 0 12px rgba(61, 185, 255, 0.25);
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+
+.pricing-billing-note,.pricing-fine-print{max-width:850px;margin:0 auto 2rem;color:rgba(255,255,255,.78);text-align:center;font-size:.82rem;line-height:1.7}
+.pricing-card-group{gap:2rem}
+.pricing-card.sonic-card{border-color:var(--accent-color);background:linear-gradient(145deg,rgba(10,46,166,.97),rgba(3,12,55,.99));box-shadow:8px 8px 0 rgba(0,0,0,.6),0 0 24px rgba(61,185,255,.18),inset 0 0 35px rgba(0,0,0,.25)}
+.pricing-card.knuckles-card{border-color:var(--tertiary-theme-color);background:linear-gradient(145deg,rgba(166,15,20,.97),rgba(65,4,8,.99));box-shadow:8px 8px 0 rgba(0,0,0,.6),0 0 24px rgba(209,33,32,.24),inset 0 0 35px rgba(0,0,0,.25)}
+.sonic-card:hover{border-color:var(--accent-color);box-shadow:10px 18px 0 rgba(0,0,0,.55),0 0 34px rgba(61,185,255,.35),inset 0 0 30px rgba(0,0,0,.2)}
+.knuckles-card:hover{border-color:var(--hover-color)}
+.sonic-card .package-label,.sonic-card .price-number{color:var(--accent-color);}
+.knuckles-card .package-label,.knuckles-card .price-number{color:var(--hover-color)}
+.sonic-card .pricing-check{color:var(--accent-color);border-color:var(--accent-color)}
+.knuckles-card .pricing-check{color:var(--hover-color);border-color:var(--hover-color)}
+.sonic-card .pricing-button{
+    color: var(--mono-color);
+    border-color: var(--mono-color);
+    background: linear-gradient(180deg, var(--theme-color), #111115);
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 0 #000;}
+.knuckles-card .pricing-button{background:linear-gradient(135deg,var(--tertiary-theme-color),#8b1010)}
+
+
+.sonic-button, .knuckles-button {
+    color: #000;
+    border-color: var(--hover-color);
+    background: linear-gradient(180deg, var(--hover-color), #b89c00);
+    text-shadow: none;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5),
+    inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+    0 5px 12px rgba(0, 0, 0, 0.45);
+}
+
+.sonic-button:hover {
+    transform: scale(1.04);
+    box-shadow:
+    0 0 15px var(--accent-color),
+    0 5px 12px rgba(0, 0, 0, 0.5);
+
+    color: #000;
+    border-color: var(--accent-color);
+    background: linear-gradient(180deg, var(--accent-color), var(--mono-color));
+    text-shadow: none;
+}
+
+.knuckles-button {
+  color: var(--mono-color);
+  border-color: var(--bg-gradientRed);
+}
+
+.knuckles-button:hover {
+    color: var(--ohno-color);
+    border-color: var(--hover-color);
+    background: linear-gradient(180deg, var(--hover-color), var(--mono-color));
+    text-shadow: none;
+
+      transform: scale(1.04);
+    box-shadow:
+    0 0 15px var(--hover-color),
+    0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+#knucklesPlan {
+  background: var(--tertiary-dark-color)
+}
+
+.payment-plan-picker{display:flex;flex-direction:column;gap:.55rem;margin:0 0 1.5rem;padding:1rem;border:1px solid rgba(255,255,255,.22);border-radius:12px;background:rgba(0,0,0,.25)}
+.payment-plan-picker[hidden],.pricing-price[hidden]{display:none}
+.payment-plan-picker label{font-size:.82rem;font-weight:700}
+.payment-plan-select{width:100%;padding:.75rem;border:1px solid rgba(255,255,255,.35);border-radius:8px;color:#fff;background:#07133d;font:inherit}
+.payment-plan-select option{color:#111;background:#fff}
+.payment-plan-amount{margin:.25rem 0 0;font:700 1.7rem var(--font-heading);color:#fff}
+.payment-plan-total{font-size:.75rem;color:rgba(255,255,255,.78)}
+.pricing-card-note{display:flex;flex-direction:column;gap:.45rem}
+.pricing-fine-print{margin-top:1.5rem;margin-bottom:0;font-size:.72rem}
+@media(max-width:900px){.pricing-card-group{flex-direction:column;align-items:center}.pricing-card{width:100%;max-width:650px}}
+@media(max-width:480px){.pricing-billing-toggle{width:100%}.billing-toggle-button{flex:1;padding:.75rem .65rem;font-size:.82rem}}
